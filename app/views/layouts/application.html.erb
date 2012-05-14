@@ -9,24 +9,6 @@
   </head>
 
   <body>
-    <SCRIPT LANGUAGE="JavaScript">
-      $(function() {
-        $('#flash_notice').delay(500).fadeIn('normal', function() {
-          $(this).delay(2500).fadeOut();
-        });
-        $('#flash_alert').delay(500).fadeIn('normal', function() {
-          $(this).delay(2500).fadeOut();
-        });
-      });
-    </SCRIPT>
-    <%= yield(:title).nil? ? "Basic" : yield(:title)%></h1>
-  <% if notice %>
-  <p id="flash_notice" class="notice"><%= notice %></p>
-  <% end %>
-
-  <% if alert %>
-  <p id="flash_alert" class="alert"><%= alert %></p>
-  <% end %>
   <div class='page_title'>
     <img src='https://graph.facebook.com/237278599679568/picture'>
     <h3>Astrology Horoscope</h3>
