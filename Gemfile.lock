@@ -241,6 +241,7 @@ DEPENDENCIES
   json
   koala
   mysql2
+  nokogiri
   pg
   pickle
   rails (= 3.2.1)
