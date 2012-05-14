@@ -1,0 +1,2 @@
+module HoroscopesHelper
+end

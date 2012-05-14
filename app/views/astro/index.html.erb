@@ -1,0 +1,28 @@
+
+
+  <h4 class='fb'>Pick horoscope type</h4>
+  <div class='padder fb'>
+    <div class='label fb'>Horoscopes</div>
+    <div class='description fb'>
+      <p style='margin-top: 0px'>Choose one of the horoscopes to see some fresh content.</p>
+    </div>
+    <div class='label fb'>Spread the word</div>
+    <div class='description fb'>
+      <p style='margin-top: 0px'>
+      <%= link_to 'Like', astro_like_path, :class => "uiButton uiButtonConfirm" %>
+      <%= link_to 'Publish this', publish_horoscope_path(@horoscopes.first), :method => :put %>
+      Your sign:<%= current_person.sign %>
+      </p>
+      <p>
+			<% @horoscopes.each do |horoscope| -%>
+				<%= link_to horoscope.name, horoscope_path(horoscope), :remote => true %>
+			<% end -%>
+      </p>
+      <div id="horoscope">
+      	
+      </div>
+    </div>
+    <br clear='all'>
+
+
+<%= render :partial => "friends", :friends => @friends %>

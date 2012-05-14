@@ -1,0 +1,223 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+*/
+
+    body {
+      font-family: "lucida grande",tahoma,verdana,arial,sans-serif;
+      font-size: 12px;
+      color: #333;
+      line-height: 17px;
+      width: 520px;
+      margin: 0px;
+      margin-top: 36px;
+      float: left;
+    }
+    
+    h4.fb {
+      background-color: #F2F2F2;
+      border-bottom: none;
+      border-top: solid 1px #E2E2E2;
+      padding: 4px 5px 5px;
+      margin-bottom: 10px;
+      text-align: left;
+      direction: ltr;
+    }
+    
+    h4.fb.reviews {
+      border-bottom: solid 1px #E2E2E2;
+    }
+    
+    h4.fb > a {
+      float: right;
+      font-weight: normal;
+    }
+    
+    .bold {
+      font-weight: bold;
+    }
+    
+    .label.fb {
+      padding: 3px 0 1px 0;
+      width: 125px;
+      float: left;
+      color: #999;
+      font-weight: bold;
+      text-align: left;
+      vertical-align: top;
+    }
+    
+    .description.fb {
+      width: 350px;
+      float: left;
+      clear: all;
+      padding: 3px 0 1px 0;
+    }
+    
+    .portrait.fb {
+      display: inline-block;
+      overflow: hidden;
+      padding: 0 6px 6px 0;
+      vertical-align: top;
+      width: 57px;
+    }
+    
+    a.fb {
+      cursor: pointer;
+      color: #3B5998;
+      text-decoration: none;
+    }
+    
+    a.fb:hover {
+      text-decoration: underline;
+    }
+    
+    .pages.picture {
+      width: 100px;
+    }
+    
+    .pages.text {
+      margin-top: 5px;
+    }
+    
+    .pages.container {
+      width: 200px;
+      float: left;
+      margin-left: 20px;
+      margin-top: 15px;
+      margin-bottom: 15px;
+      text-align: center;
+    }
+    
+    .review.picture.fb {
+      width: 50px;
+      float: left;
+      margin-right: 10px;
+    }
+    
+    .review.text.fb {
+      width: 100px;
+      float: left;
+      clear: right;
+    }
+    
+    .review.container.fb {
+      width: 200px;
+      float: left;
+      margin-top: 15px;
+      margin-bottom: 15px;
+      margin-right: 40px;
+      margin-left: 5px;
+    }
+    
+    a.review.fb {
+      margin-right: 5px;
+      font-weight: bold;
+    }
+    
+    .padder.fb {
+      margin-right: 5px;
+      margin-left: 5px;
+    }
+    
+    .star.fb {
+      background-image: url(/images/fb-info-style/star.png);
+      background-repeat: no-repeat;
+      display: inline-block;
+      height: 12px;
+      width: 12px;
+      background-position: -0px -26px;
+      margin-top: 5px;
+    }
+    
+    .star.fb.light {
+      background-position: -0px -13px;
+    }
+    
+    .uiButton {
+      background:#eee url(/images/fb-info-style/bg_button.png) repeat 0 0;
+      border:1px solid #999;
+      border-bottom-color:#888;
+      box-shadow:0 1px 0 rgba(0, 0, 0, .1);
+      -webkit-box-shadow:0 1px 0 rgba(0, 0, 0, .1);
+      cursor:pointer;
+      display:-moz-inline-box;
+      display:inline-block;
+      font-size:11px;
+      font-weight:bold;
+      line-height:normal !important;
+      padding:2px 6px;
+      text-align:center;
+      text-decoration:none;
+      vertical-align:top;
+      white-space:nowrap
+    }
+    .uiButton + .uiButton {
+      margin-left:4px
+    }
+    
+    .uiButton:hover {
+      text-decoration:none
+    }
+    
+    .uiButton:active {
+      background:#ddd;
+      border-bottom-color:#999;
+      box-shadow:0 1px 0 rgba(0, 0, 0, .05);
+      -webkit-box-shadow:0 1px 0 rgba(0, 0, 0, .05)
+    }
+    .uiButton .uiButtonText {
+      background:none;
+      border:0;
+      color:#fff;
+      cursor:pointer;
+      display:-moz-inline-box;
+      display:inline-block;
+      font-family:'Lucida Grande', Tahoma, Verdana, Arial, sans-serif;
+      font-size:11px;
+      font-weight:bold;
+      margin:0;
+      outline:none;
+      padding:1px 0 2px;
+      white-space:nowrap
+    }
+    .uiButtonConfirm {
+      background-color:#5b74a8;
+      background-position:0 -48px;
+      border-color:#29447e #29447e #1a356e
+    }
+    .uiButtonConfirm:active {
+      background:#4f6aa3;
+      border-bottom-color:#29447e
+    }
+    
+    #left_column {
+      float: left;
+      width: 150px;
+    }
+    
+    #right_column {
+      float: left;
+      width: 520px;
+    }
+    .page_title img {
+      float: left;
+    }
+    h3 {
+      font-family: "lucida grande",tahoma,verdana,arial,sans-serif;
+      font-size: 32px;
+      color: #1C2A47;
+      float: left;
+      margin: 0px;
+      margin-top: 16px;
+      margin-left: 12px;
+    }

@@ -1,0 +1,21 @@
+<h4 class='fb'>Friends</h4>
+    <div class='padder fb'>
+      <div class='label fb'>My friends</div>
+      <div class='description fb'>
+        <p style='margin-top: 0px'>
+        Here is list of your friends you can share your content.
+        </p>
+        <p>
+<% @friends.each do |friend| -%>
+        <a class='portrait fb' href='https://www.facebook.com/<%=friend['id']%>' target='_top'>
+          <img src="https://graph.facebook.com/<%=friend['id']%>/picture">
+        	<%= friend['name'] %>  
+        </a>
+<%= link_to 'Share', share_horoscope_path(@horoscopes.first, :uid => friend['id']), :method => :put %>
+<% end -%>
+        </p>
+      </div>
+      <br clear='all'>
+    </div>
+
+
