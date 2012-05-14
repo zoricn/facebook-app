@@ -10,6 +10,8 @@ gem 'thin'
 gem 'haml-rails'
 gem 'koala'
 gem 'sass-rails',   '~> 3.2.3'
+gem "extjs"
+gem "therubyracer"
 
 
 # Gems used only for assets and not required
@@ -50,8 +52,9 @@ group :development, :test do
   gem "simplecov", :require => false
 end
 
-group :production do
-  gem 'pg'
+group :heroku, :production do
+  gem "therubyracer-heroku"
+  gem "pg", :require => "pg"
 end
 
 # To use ActiveModel has_secure_password
