@@ -10,6 +10,7 @@ gem 'thin'
 gem 'haml-rails'
 gem 'koala'
 gem 'sass-rails',   '~> 3.2.3'
+gem "xmvc"
 gem "extjs"
 gem "therubyracer"
 
