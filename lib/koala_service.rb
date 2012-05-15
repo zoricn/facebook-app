@@ -17,11 +17,13 @@ module KoalaService
   end
 
   def self.post_on_my_wall(graph, msg, options = {})
-    graph.put_wall_post(msg)
+    msg ||= "Take a look at my horoscope!"
+    graph.put_wall_post(msg, {:url => "kolosek.com"})
   end
 
-  def self.post_on_friends_wall(graph, friends_uid)
-    graph.put_wall_post("Hey. Take a look at Astrology App!", {:name => "SomeName"}, friends_uid) 
+  def self.post_on_friends_wall(graph, msg, friends_uid)
+    msg ||= "Take a look at your horoscope!"
+    graph.put_wall_post(msg, {:name => "SomeName"}, friends_uid) 
   end
 
   #ENV variable is unique facebook application id
