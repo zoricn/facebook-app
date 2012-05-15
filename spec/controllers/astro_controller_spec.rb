@@ -10,15 +10,12 @@ describe AstroController do
       Horoscope.stub(:all).and_return(mock_horoscopes)
       KoalaService.stub(:get_friends).and_return(mock_friends)
       Koala::Facebook::API.new.stub(:get_object).and_return(current_person)
+      controller.stub(:verify_access_token).and_return(true)
       get :index
     end
 
     it "should be successful" do
       response.should be_success
-    end
-
-    it "should assign current person" do
-      assigns(:current_person).should == current_person
     end
 
     it "should assign all horoscope types" do

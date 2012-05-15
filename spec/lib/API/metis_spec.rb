@@ -1,13 +1,12 @@
 require 'spec_helper'
-describe Solutions do
+describe Metis do
   before do
-    @solutions = Solutions.new
+    @metis = Metis.new
   end
 
 
   it "should return number of copies" do
-    host = 'http://blog.kolosek.com/hashes-tricks'
-    content = Solutions.get_content("Aries", "daily01overview/dailyoverview")
+    content = Metis.get_today("Aries", "daily_overview")
     content.should_not be_nil
   end
 
