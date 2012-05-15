@@ -1,22 +1,31 @@
 class HoroscopesController < ApplicationController
   before_filter :verify_access_token, :except => [:show]
-  before_filter :check_if_user_has_fb_account, :only => [:publish, :share, :like]
+  #before_filter :check_if_user_has_fb_account, :only => [:publish, :share]
   before_filter :get_horoscope
 
   def show
-    @content = Solutions.get_content(current_person.sign, @horoscope.solutions_feed)
+    @content = Metis.get_today(current_person.sign, @horoscope.solutions_feed)
+    session[:horoscope_content] = @content
   end
 
   def publish
-    #KoalaService.post_on_my_wall(@graph, "I like this horoscope")
+    begin
+      KoalaService.post_on_my_wall(@graph, session[:horoscope_content])
+    rescue Exception => e
+      puts 'Exception when publishing content'
+    end
     respond_to do |format|
-		  format.js { render :layout => false }
-		  format.html { render :layout => false }
-		end
+      format.js { render :layout => false }
+      format.html { render :layout => false }
+    end
   end
 
   def share
-    KoalaService.post_on_friends_wall(@graph, params[:uid])
+    begin
+      KoalaService.post_on_friends_wall(@graph, session[:horoscope_content], params[:uid])
+    rescue Exception => e
+    	puts 'Exception when sharing content'
+    end
   end
 
 

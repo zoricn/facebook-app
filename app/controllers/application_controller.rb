@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
   helper_method :current_person
   #TODO Handle errors for applications
   # Koala::Facebook::APIError
+  # Koala::Facebook::APIError (OAuthException: (#506) Duplicate status message)
 
   def current_person
     @current_person ||= Person.find_by_uid(session[:current_uid])
@@ -36,12 +37,24 @@ class ApplicationController < ActionController::Base
       # Need to get an actual object to test the access token
       @current_graph = @graph.get_object("me")
       session['current_uid'] = @current_graph['id']
-
-      Person.find_by_uid(@current_graph['id']) || Person.create!(:uid => @current_graph['id'], :sign => "Aries" )
-
+   
+      unless Person.find_by_uid(@current_graph['id'])
+        sign = @current_graph['birthday'].nil? ? 'Aries' : return_sign(@current_graph['birthday']) 
+        Person.create!(:uid => @current_graph['id'], :sign => sign )
+      end
+          
+      
     rescue Koala::Facebook::APIError
       session['access_token'] = nil
       request_authorization
+    end
+
+    def return_sign(birthday)    
+		  birthday += "/2012" if birthday.count("/") == 1
+		  birthday = Date.strptime(birthday, "%m/%d/%Y")
+		  month = birthday.strftime("%m").to_i
+		  day = birthday.strftime("%d").to_i
+		  AstrologyLib.sign_from_date(month,day).try(:capitalize)
     end
 
 end
