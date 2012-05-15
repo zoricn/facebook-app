@@ -6,6 +6,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-Horoscope.create!(:name => "Daily overview", :solutions_feed => 'daily01overview/dailyoverview')
-Horoscope.create!(:name => "Daily Astro Slam", :solutions_feed => 'daily37astroslam/dailyastroslam')
-Horoscope.create!(:name => "Daily home garden", :solutions_feed => 'daily43homegarden/dailyhomegarden')
+Horoscope.delete_all
+Horoscope.create!(:name => "Daily overview", :solutions_feed => 'daily_overview')
+Horoscope.create!(:name => "Daily Astro Slam", :solutions_feed => 'daily_astro_slam')
+Horoscope.create!(:name => "Daily home garden", :solutions_feed => 'daily_home_and_garden')
