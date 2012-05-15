@@ -1,4 +1,6 @@
 FbAstro::Application.routes.draw do
+  resources :people, :only => [:edit, :update]
+
   resources :horoscopes, :only => [:show] do
     member do
 			put 'publish'
