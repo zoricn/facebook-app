@@ -1,1 +1,11 @@
 <%= @content %>
+
+<div class="fb-like" data-href="https://apps.facebook.com/astrologydev/" data-send="false" data-width="450" data-show-faces="false"></div>
+
+<script language="javascript" type="text/javascript">
+        $(document).ajaxComplete(function(){
+    try{
+        FB.XFBML.parse(); 
+    }catch(ex){}
+});
+</script>

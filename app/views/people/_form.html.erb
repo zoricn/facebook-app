@@ -1,0 +1,7 @@
+<%= form_for @person do |f| -%>
+
+      <%= f.label :sign, :class => 'control-label' %>
+      <%= f.select :sign, Horoscope::WESTERN_SIGNS.map{|s| [s.capitalize,s.capitalize]} %>
+
+      <%= f.submit "Change sign" %>	
+<% end -%>

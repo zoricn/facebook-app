@@ -9,9 +9,8 @@
     <div class='label fb'>Spread the word</div>
     <div class='description fb'>
       <p style='margin-top: 0px'>
-      <%#= link_to 'Like', astro_like_path, :class => "uiButton uiButtonConfirm" %>
-      <%= link_to 'Publish this', publish_horoscope_path(@horoscopes.first), :method => :put %>
-      Your sign:<%= current_person.sign %>
+			<%= link_to 'Publish this', publish_horoscope_path(@horoscopes.first), :method => :put %>
+      Your sign:<%= current_person.sign %> <%= link_to 'Change sign', edit_person_path(current_person), :rel => "facebox", :remote => true %>
       </p>
       <p>
 			<% @horoscopes.each do |horoscope| -%>
