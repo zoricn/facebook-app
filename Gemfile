@@ -14,6 +14,7 @@ gem 'nokogiri'
 gem "xmvc"
 gem "extjs"
 gem "therubyracer"
+gem "httparty"
 
 
 # Gems used only for assets and not required
